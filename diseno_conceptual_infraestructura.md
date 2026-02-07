@@ -62,40 +62,16 @@ Incluya a continuaci�n el diagrama conceptual de la infraestructura.
 
 ### Diagrama de ejemplo en [Mermaid](https://mermaid.js.org/syntax/flowchart.html)
 
-graph TD
-    %% Usuarios y Acceso
-    User((Usuario <br/>Empleado Empresa)) --> Access[Capa de Acceso:<br/>Control y Distribución de Solicitudes]
+```
+flowchart TD
+    U[Usuarios / Sucursales]
+    W[Servidor Web]
+    A[Servidor de Aplicaciones]
+    D[Servidor de Base de Datos]
 
-    %% Capa de Aplicación y Git
-    subgraph SDLC [Ciclo de Vida de Desarrollo]
-        direction LR
-        Git[(Git Repository:<br/>Control de Versiones)]
-        CI_CD{Pipeline CI/CD}
-    end
+    U --> W
+    W --> A
+    A --> D
 
-    Access --> App[Capa de Aplicación:<br/>Sistema Empresarial / Gestión Documental]
-
-    %% Flujo de Código hacia la Aplicación
-    Git -->|Integración Continua| CI_CD
-    CI_CD -->|Despliegue Continuo| App
-
-    %% Capa de Almacenamiento
-    App --> Storage[Capa de Almacenamiento:<br/>Repositorio de Documentos / Persistencia]
-
-    %% Sistemas de Apoyo
-    Storage --> Backup[Sistemas de Respaldo:<br/>Recuperación y Copias de Seguridad]
-    
-    %% Monitoreo Transversal
-    App -.-> Monitor[Sistema de Monitoreo:<br/>Estado de Rendimiento]
-    Storage -.-> Monitor
-    Access -.-> Monitor
-
-    %% Estilos
-    style User fill:#D1D5DB,stroke:#374151
-    style Access fill:#99FFE6,stroke:#00CC99
-    style App fill:#99FFE6,stroke:#00CC99
-    style Storage fill:#99FFE6,stroke:#00CC99
-    style Backup fill:#99FFE6,stroke:#00CC99
-    style Monitor fill:#FFF3B0,stroke:#F5D100
-    style Git fill:#E0E7FF,stroke:#4F46E5
+```
 
