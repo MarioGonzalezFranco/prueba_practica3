@@ -3,11 +3,13 @@
 
 
 ## 1. Integrantes del grupo
-Carlos Ernesto Castillo Aguirre – CA100922'
-Wendy Cristabel Hernández Urías – HU10022'
-Mario Enrique Gonzalez Franco – GF100822'
-Francisco Isaac Gálvez Acevedo - GA100422'
-Bryan Gerardo Rodriguez Rodriguez - RR101221
+- Carlos Ernesto Castillo Aguirre – CA100922'
+- Wendy Cristabel Hernández Urías – HU10022'
+- Mario Enrique Gonzalez Franco – GF100822'
+- Francisco Isaac Gálvez Acevedo - GA100422'
+- Bryan Gerardo Rodriguez Rodriguez - RR101221
+
+---
 ---
 
 ## 2. Introducci�n
