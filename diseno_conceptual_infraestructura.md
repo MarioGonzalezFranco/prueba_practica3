@@ -3,11 +3,11 @@
 
 
 ## 1. Integrantes del grupo
-- Nombre completo - Carnet'
-- Nombre completo - Carnet'
-- Nombre completo - Carnet'
-- Nombre completo - Carnet'
-- Nombre completo - Carnet 
+Carlos Ernesto Castillo Aguirre – CA100922'
+Wendy Cristabel Hernández Urías – HU10022'
+Mario Enrique Gonzalez Franco – GF100822'
+Francisco Isaac Gálvez Acevedo - GA100422'
+Bryan Gerardo Rodriguez Rodriguez - RR101221
 ---
 
 ## 2. Introducci�n
@@ -50,7 +50,7 @@ Describa c�mo se organiza la infraestructura en capas:
 
 - **Capa de Presentaci�n:** Incluye el servidor web, encargado de recibir las solicitudes de los usuarios y presentar la información de forma accesible
 - **Capa de Aplicaci�n:** Incluye el servidor de aplicaciones, responsable de procesar las solicitudes, aplicar reglas de negocio y comunicarse con la base de datos
-- **Capa de Datos:** Incluye el servidor de Bases de Datos, donde se almacena la información financiera y de clientes
+- **Capa de Datos:** Incluye el servidor de Bases de Datos, donde se almacena la información financiera y de
 
 Indique qu� componentes se consideran expuestos y cu�les permanecen en la red interna.
 
@@ -58,20 +58,30 @@ Indique qu� componentes se consideran expuestos y cu�les permanecen en la re
 
 ## 6. Diagrama l�gico de infraestructura
 
-Incluya a continuaci�n el diagrama conceptual de la infraestructura.
+Diagrama conceptual de la infraestructura.
 
-### Diagrama de ejemplo en [Mermaid](https://mermaid.js.org/syntax/flowchart.html)
-
-```
+```mermaid
 flowchart TD
-    U[Usuarios / Sucursales]
-    W[Servidor Web]
-    A[Servidor de Aplicaciones]
-    D[Servidor de Base de Datos]
+    U["Usuarios"]
 
-    U --> W
-    W --> A
-    A --> D
+    subgraph Zona_Publica ["Zona Publica DMZ"]
+        A["Servidor Web"]
+    end
 
-```
+    subgraph Zona_Privada ["Red Interna"]
+        B["Servidor de Aplicaciones"]
+        C["Servidor de Base de Datos"]
+    end
+
+    subgraph Gestion ["Gestion y Soporte"]
+        D["Sistemas de Respaldo"]
+        E["Sistema de Monitoreo"]
+    end
+
+    U --> A
+    A --> B
+    B --> C
+    C --> D
+    B --> E
+    C --> E
 
